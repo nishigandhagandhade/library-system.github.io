@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .main{
+
+        text-align: center;
+        background-color: antiquewhite;
+        height: 100vh;
+    }
+    .books{
+
+        background-color: aquamarine;
+        height: 600px;
+        width: 350px;
+        margin: auto;
+        border-radius: 30px;
+    }
+    #book{
+
+        width: 290px;
+        line-height: 25px;
+        font-size: 15px;
+        border-radius: 5px;
+        border: 1px solid rgba(80, 80, 221);
+        padding-left: 5px;
+        padding: 10px;
+        margin-top: 25px;
+    }
+     #id , #result{
+
+        width: 300px;
+        line-height: 25px;
+        font-size: 15px;
+        border-radius: 5px;
+        border: 1px solid rgba(80, 80, 221);
+        padding-left: 5px;
+        margin-top: 25px;
+        padding: 20px;
+    }
+   
+    #btn{
+
+        background-color: rgb(11, 11, 11);
+        width: 95px;
+        height: 45px;
+        color: white;
+        font-size: 18px;
+        border: none;
+        border-radius: 5px;
+        margin: 20px;
+        cursor: pointer;
+        box-shadow: 10px 5px 20px black;
+
+    }
+    #btn:hover{
+
+        background-color: blue;
+    }
+    label{
+
+        font-size: 17px;
+      
+        
+    }
+</style>
+
+<body>
+
+    <div class="main">
+
+        <div class="books">
+
+            <h1 id="head">Welcome To Thise Library </h1>
+
+            <form action="./second page.html" id="form">
+                
+                <select id="book">
+                    <option class="option" value="books select">Books select</option>
+                    <option class="option" value="html">html</option>
+                    <option class="option" value="css">css</option>
+                    <option class="option" value="javascript">javascript</option>
+                    <option class="option" value="react">react</option>
+                    <option class="option" value="nodes js">nodes js</option>
+                    <option class="option" value="c++">c++</option>
+
+                </select><br><br>
+
+             
+                <input type="text" id="id" placeholder="book id" maxlength="2" title="minimum 1 or 2 Digit add"><br><br>
+
+          
+                <input type="text" id="result" placeholder="output here"><br>
+                <span id="span"></span> <br> <br>
+
+                <input type="button" value="Cheak" onclick="output()" id="btn">
+                <input type="button" value="delete" onclick="clr()" id="btn">
+
+                <input type="submit" onclick="submit_data()" id="btn">
+
+                
+
+            </form>
+        </div>
+
+    </div>
+
+
+
+
+    <script>
+        function output() {
+
+            var book;
+            var id;
+            var result;
+
+            book = document.getElementById("book").value
+
+            id = document.getElementById("id").value;
+
+            document.getElementById("result").book = id;
+
+            if (book == "html") {
+
+                document.getElementById("result").value = (book + "   " + id)
+                document.getElementById("span").innerHTML = "book is borrow";
+                document.getElementById("span").style.color = "red";
+            }
+            else if (book == "css") {
+
+                document.getElementById("result").value = (book + "   " + id)
+                document.getElementById("span").innerHTML = "book is borrow";
+                document.getElementById("span").style.color = "red";
+            }
+            else if (book == "css") {
+
+                document.getElementById("result").value = (book + "   " + id)
+                document.getElementById("span").innerHTML = "book is borrow";
+                document.getElementById("span").style.color = "red";
+            }
+
+            else if (book == "javascript") {
+
+                document.getElementById("result").value = (book + "   " + id)
+                document.getElementById("span").innerHTML = "book is borrow";
+                document.getElementById("span").style.color = "red";
+            }
+
+            else if (book == "nodes js") {
+
+                document.getElementById("result").value = (book + "   " + id)
+                document.getElementById("span").innerHTML = "book is borrow";
+                document.getElementById("span").style.color = "red";
+            }
+
+            else if (book == "react") {
+
+                document.getElementById("result").value = (book + "   " + id)
+                document.getElementById("span").innerHTML = "book is borrow";
+                document.getElementById("span").style.color = "red";
+            }
+            else if (book == "c++") {
+
+                document.getElementById("result").value = (book + "   " + id)
+                document.getElementById("span").innerHTML = "book is borrow";
+                document.getElementById("span").style.color = "red";
+            }
+
+
+
+        }
+
+        function clr() {
+
+            document.getElementById("result").value = " ";
+            document.getElementById("id").value = " ";
+            document.getElementById("span").innerHTML = " ";
+
+
+        }
+        function submit_data() {
+            book = document.getElementById("book").value;
+            id = document.getElementById("id").value;
+
+            sessionStorage.setItem("book", book);
+            sessionStorage.setItem("id", id);
+           
+
+        }
+       
+    </script>
+
+</body>
+
+</html>

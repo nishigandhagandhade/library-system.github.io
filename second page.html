@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .main {
+
+        text-align: center;
+        background-color: antiquewhite;
+        height: 100vh;
+    }
+
+    .books {
+
+        background-color: aquamarine;
+        height: 600px;
+        width: 350px;
+        margin: auto;
+        border-radius: 30px;
+    }
+
+    p {
+        /* line-height: 25px; */
+        margin-right: 50px;
+        margin-top: 25px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+    }
+
+    span {
+
+        color: blue;
+        font-size: 18px;
+    }
+
+    .btn2 {
+
+        background-color: rgb(11, 11, 11);
+        width: 80px;
+        height: 40px;
+        color: white;
+        font-size: 18px;
+        border: none;
+        border-radius: 5px;
+        margin: 20px;
+        cursor: pointer;
+        box-shadow: 10px 5px 20px black;
+
+    }
+
+    .btn2:hover {
+
+        background-color: blue;
+    }
+
+    #success-div {
+        width: 100%;
+        height: 90px;
+        display: flex;
+        position: absolute;
+        display: none;
+    }
+
+    #sub1 img {
+        width: 50px;
+    }
+
+    #sub1 {
+        width: 60px;
+        height: 90px;
+    }
+
+    #sub2 {
+        width: 250px;
+        height: 90px;
+        padding-top: 14px;
+        font-size: x-large;
+        color: rgb(0, 186, 0);
+    }
+
+    #fail-div {
+        width: 100%;
+        height: 90px;
+        display: flex;
+        position: absolute;
+        display: none;
+    }
+
+    #sub11 img {
+        width: 50px;
+    }
+
+    #sub11 {
+        width: 60px;
+        height: 90px;
+    }
+
+    #sub22 {
+        width: 250px;
+        height: 90px;
+        padding-top: 14px;
+        font-size: x-large;
+        color: rgb(244, 67, 54);
+    }
+
+    #warning {
+        color: rgb(244, 67, 54);
+    }
+</style>
+
+<body>
+    <div class="main">
+
+        <div class="books">
+            <h1>Submit From Data</h1>
+
+            <p>Book is borrwed name : <span id="book"> </span>,<br>
+                Thank you for your book borrwed.<br><br>
+
+                Book id boorwed : <span id="id"></span><br><br>
+
+                Please enter it in the following box and submit for confirmation:</p>
+            <br>
+            <br>
+
+            <button class="btn2" id="validate" onclick="register()">Register</button>
+            <button class="btn2" id="back" onclick="history.back()">Back</button>
+
+            <div id="warning"></div>
+
+            <div id="success-div">
+                <div id="sub1"><img src="./right.png"></div>
+                <div id="sub2">Registretion Successful !</div>
+            </div>
+
+            <div id="fail-div">
+                <div id="sub11"><img src="./wrong.png"></div>
+                <div id="sub22">Registertion Failed !</div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        var book = sessionStorage.getItem("book");
+
+        var id = sessionStorage.getItem("id");
+
+
+        document.getElementById("book").innerHTML = book;
+        document.getElementById("id").innerHTML = id;
+
+
+
+        function register() {
+            book = document.getElementById("book").value;
+            id = document.getElementById("id").value;
+
+            if (book == book) {
+                document.getElementById('warning').style.display = "none";
+                document.getElementById('success-div').style.display = "flex";
+                document.getElementById('fail-div').style.display = "none";
+                document.getElementById('validate').style.display = "none";
+            }
+            else if (id == id) {
+
+                document.getElementById('warning').style.display = "none";
+                document.getElementById('success-div').style.display = "flex";
+                document.getElementById('fail-div').style.display = "none";
+                document.getElementById('validate').style.display = "none";
+            }
+
+
+
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>
